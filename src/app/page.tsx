@@ -1,113 +1,148 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="block">
+      {/* Header */}
+      <header className="w-full fixed top-0 left-0 z-10">
+        <nav className="h-12 flex justify-between align-middle font-bold">
+          <div className="p-2 pl-4">
+            <Link href={`/`}>DNRatthee</Link>
+          </div>
+        </nav>
+      </header>
+
+      {/* Home */}
+      <section id="home" className="block relative ">
+        <div className="grid md:flex pt-12 max-w-5xl m-auto">
+          <div className="flex flex-col justify-center h-2/5 sm:h-3/5 md:h-full text-3xl sm:text-5xl font-bold p-4 ">
+            <h1 className="text-7xl">Hello, I&apos;m</h1>
+            <h1>Ratthee Jarathbenjawong</h1>
+          </div>
+          <Image
+            className="w-10/12 md:w-70 lg:w-90 absolute md:relative right-0 -bottom-12 object-contain pb-12"
+            src={"/images/DNR.png"}
+            alt="DNRatthee's photo"
+            width={200}
+            height={200}
+            priority={true}
+            unoptimized
+          />
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+      {/* About */}
+      <section id="about" className="block relative p-4 pt-12 ">
+        <div className="max-w-5xl p-4 m-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-center pb-8">
+            About
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <div className="grid max-sm:grid-rows-[200px_minmax(200px,_1fr)] md:grid-cols-2 m-auto md:pt-12">
+            <div className="grid text-center justify-center m-auto">
+              <Image
+                className="bg-green rounded-full pt-4 justify-items-center object-contain w-40 h-40 md:w-56 md:h-56 "
+                src={"/images/DNR.png"}
+                alt="DNRatthee's photo"
+                width={150}
+                height={150}
+                unoptimized
+              />
+            </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+            <div className="flex flex-col justify-center text-center md:text-left">
+              <h3 className="text-xl md:text-3xl font-bold text-green mb-2 ">
+                I&apos;m Ratthee Jarathbenjawong
+              </h3>
+              <span className="mb-4">Full Stack Developer</span>
+              <p className="font-thin text-base mb-4 pt-8">
+                Web developer with experience in developing web applications. I
+                am passionate about learning new technology and creating web
+                applications. I have experience in both front-end and back-end
+                development. I am always learn new technology and improve my
+                skills.
+              </p>
+              <div className="grid max-sm:text-center max-sm:justify-center">
+                <a href="https://github.com/dnratthee" className="p-2">
+                  <Image
+                    priority
+                    src="/images/github-mark.svg"
+                    height={24}
+                    width={24}
+                    alt="My GitHub page"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+      {/* Skills */}
+      <section id="skills" className="block relative p-4 pt-12">
+        <div className="pt-12 max-w-5xl m-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-center pb-8">
+            Skills
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
+          <div className="pt-8 text-base">
+            <h3 className="text-xl font-bold text-green mb-4">
+              Frontend Development
+            </h3>
+            <span className="skill">Next.js</span>
+            <span className="skill">React</span>
+            <span className="skill">HTML</span>
+            <span className="skill">CSS</span>
+            <span className="skill">TypeScript</span>
+            <span className="skill">JavaScript</span>
+          </div>
+          <div className="pt-8 text-base">
+            <h3 className="text-xl font-bold text-green mb-4">
+              Backend Development
+            </h3>
+            <span className="skill">Node.js</span>
+            <span className="skill">PHP</span>
+            <span className="skill">MySQL</span>
+            <span className="skill">PostgreSQL</span>
+            <span className="skill">MongoDB</span>
+            <span className="skill">Docker</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="block relative p-4 pt-12">
+        <div className="pt-12 max-w-5xl m-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-center pb-8">
+            Contact
+          </h2>
+          <div className="pt-8 text-base">
+            <h3 className="text-xl font-bold text-green mb-4">EMAIL</h3>
+            <span>
+              <a href="mailto:info@dnratthee.me">info@dnratthee.me</a>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="w-full flex flex-col p-2 pl-4 align-middle gap-1 font-light text-base text-gray-300">
+        <Link className="font-bold text-xl text-white" href={`/`}>
+          DNRatthee
+        </Link>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+
+        <span className="text-xs pt-2 pb-2">&copy; 2024 DNRatthee</span>
+        <a
+          href="https://www.flaticon.com/free-icons/letter-d"
+          title="letter d icons"
+          className="text-xs text-gray-600"
+        >
+          Letter d icons created by yukyik - Flaticon
         </a>
-      </div>
+      </footer>
     </main>
   );
 }

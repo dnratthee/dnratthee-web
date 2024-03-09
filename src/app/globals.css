@@ -3,31 +3,87 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-green: #00cc99;
+  --color-gray: #5b706b;
+  --background: #fff;
+  --foreground: #000;
+  --header-height: 3rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: #000;
+    --foreground: #fff;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground);
+  background: var(--background);
+
+  font-size: 1.2rem;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.bg-green {
+  background: var(--color-green);
+}
+
+.text-green {
+  color: var(--color-green);
+}
+
+nav {
+  color: white;
+  background: var(--color-green);
+}
+
+main > section ~ section {
+  background: var(--background);
+  color: var(--foreground);
+}
+main > section > div {
+  /* height: calc(100vh - var(--header-height)); */
+  height: 100vh;
+}
+
+main > section {
+  background: var(--color-green);
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  main > section ~ section > div {
+    height: calc(100vh - var(--header-height));
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main > section > div {
+    height: 640px;
+  }
+}
+
+header {
+  background-color: var(--background-rgb);
+}
+
+.skill {
+  background: var(--color-green);
+  color: white;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+footer {
+  background: var(--color-gray);
+  color: white;
 }
