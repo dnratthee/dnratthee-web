@@ -119,7 +119,11 @@ export default function Home() {
           <div className="pt-8 text-base">
             <h3 className="text-xl font-bold text-green mb-4">EMAIL</h3>
             <span>
-              <a href="mailto:info@dnratthee.me">info@dnratthee.me</a>
+              <a
+                href={`mailto:info@dnratthee.me?subject=Mail from DNRatthee Website&body=Mail from DNRatthee Website`}
+              >
+                info@dnratthee.me
+              </a>
             </span>
           </div>
         </div>

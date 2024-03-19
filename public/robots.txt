@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot-Image
+Disallow: /
+
+Sitemap: https://dnratthee.me/sitemap.xml
+Sitemap: https://www.dnratthee.me/sitemap.xml
